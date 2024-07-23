@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  yeelight-app:
+    image: yeelight-app
+    container_name: yeelight-app
+    network_mode: host
+    restart: always
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+      - SYS_ADMIN
+      - NET_RAW
+    volumes:
+      - /var/run/dbus:/var/run/dbus
